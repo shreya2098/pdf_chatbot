@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "c41c977e-3992-4e5a-b7db-30eb2e764750",
+		"name": "pdf_chatbot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36571748"
+	},
+	"item": [
+		{
+			"name": "upload_pdf",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "pdf_files",
+							"type": "file",
+							"src": [
+								"/C:/Users/HP/Downloads/FINAL_FAQs_June_2018.pdf",
+								"/C:/Users/HP/Downloads/Final_FREQUENTLY_ASKED_QUESTIONS_-PATENT.pdf"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/upload",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "health_endpoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chat_with_pdf",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "conversation_id",
+							"value": "default",
+							"type": "text"
+						},
+						{
+							"key": "question",
+							"value": "When can an applicant withdraw a patent application in India?\n",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/chat",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"chat"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
